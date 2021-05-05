@@ -42,11 +42,11 @@
 
         setTimeout(update_figs(), 2000);
         function update_figs() {
-            $(".addgif01").css({opacity: 1;});
-            $(".addgif02").css({opacity: 1;});
-            $(".addgif03").css({opacity: 1;});
-            $(".addgif04").css({opacity: 1;});
-            $(".addgif05").css({opacity: 1;});
-            $(".addgif06").css({opacity: 1;});
+            $(".addgif01").css({opacity: 1});
+            $(".addgif02").css({opacity: 1});
+            $(".addgif03").css({opacity: 1});
+            $(".addgif04").css({opacity: 1});
+            $(".addgif05").css({opacity: 1});
+            $(".addgif06").css({opacity: 1});
         }
     });
