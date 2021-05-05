@@ -8,10 +8,10 @@
         $("#rec312119903").append($('<div class="addgif06"></div>'));
 
         function tapHandler01( event ){
-            $(".addgif01").css({top: (100% + Math.random()*$("#rec312119903").height()*10%), left: (Math.random()*$(window).width()*10% - 10%)});
+            $(".addgif01").css({top: '100% + Math.random()*$("#rec312119903").height()*10%', left: 'Math.random()*$(window).width()*10% - 10%'});
         }
         function tapHandler02( event ){
-            $(".addgif02").css({top: (40% - Math.random()*$("#rec312119903").height()*30%), left: (30% + Math.random()*$(window).width()*15%)});
+            $(".addgif02").css({top: '40% - Math.random()*$("#rec312119903").height()*30%', left: '30% + Math.random()*$(window).width()*15%'});
         }
         function tapHandler03( event ){
             $(".addgif03").css({top: Math.random()*$("#rec312119903").height()*0.33, right: Math.random()*$(window).width()*0.66});
