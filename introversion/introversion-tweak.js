@@ -40,7 +40,7 @@
         $('.addgif05').on( "vclick", "p", tapHandler05);
         $('.addgif06').on( "vclick", "p", tapHandler06);
 
-        setTimeout(update_figs(), 2000);
+        //setTimeout(update_figs(), 2000);
         function update_figs() {
             console.log ("opacity");
             $(".addgif01").css({opacity: 1});
