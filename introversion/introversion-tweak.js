@@ -42,6 +42,7 @@
 
         setTimeout(update_figs(), 2000);
         function update_figs() {
+            console.log ("opacity");
             $(".addgif01").css({opacity: 1});
             $(".addgif02").css({opacity: 1});
             $(".addgif03").css({opacity: 1});
