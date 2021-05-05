@@ -1,5 +1,4 @@
-<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script>
+
     $( document ).ready(function() {
         $("#rec312119903").append($('<div class="addgif01"></div>'));
         $("#rec312119903").append($('<div class="addgif02"></div>'));
@@ -51,15 +50,3 @@
             $(".addgif06").css({opacity: 1;});
         }
     });
-</script>
-
-<style>
-    .addgif01 { display: block; position: absolute; left: -5%; top:110%; width: 356px; height: 192px; background: url('https://cdn.jsdelivr.net/gh/maksimiliani/1991/introversion/introversion-fig-01.png') no-repeat; transition: all 0.5s ease-out; background-size: contain; z-index: 100; opacity: 0;}
-    .addgif02 { display: block; position: absolute; left: 10%; top:20%; width: 112px; height: 218px; background: url('https://cdn.jsdelivr.net/gh/maksimiliani/1991/introversion/introversion-fig-02.png') no-repeat; transition: all 0.5s ease-out; background-size: contain; z-index: 100; opacity: 0;}
-    .addgif03 { display: block; position: absolute; right: 10%; top:66%; width: 129px; height: 258px; background: url('https://cdn.jsdelivr.net/gh/maksimiliani/1991/introversion/introversion-fig-03.png') no-repeat; transition: all 0.5s ease-out; background-size: contain; z-index: 100; opacity: 0;}
-    .addgif04 { display: block; position: absolute; left: 35%; top:150%; width: 25%; height: 456px; background: url('https://cdn.jsdelivr.net/gh/maksimiliani/1991/introversion/introversion-fig-04.png') no-repeat; transition: all 0.5s ease-out; background-size: contain; z-index: 100; opacity: 0;}
-    .addgif05 { display: block; position: absolute; left: 42%; top:66%; width: 15%; height: 189px; background: url('https://cdn.jsdelivr.net/gh/maksimiliani/1991/introversion/introversion-fig-05.png') no-repeat; transition: all 0.5s ease-out; background-size: contain; z-index: 100; opacity: 0;}
-    .addgif06 { display: block; position: absolute; left: 42%; top:10%; width: 15%; height: 248px; background: url('https://cdn.jsdelivr.net/gh/maksimiliani/1991/introversion/introversion-fig-06.png') no-repeat; transition: all 0.5s ease-out; background-size: contain; z-index: 100; opacity: 0;}
-
-    #rec312126518 .t498__descr {letter-spacing: 0.25em;}
-</style>
