@@ -9,25 +9,23 @@ var figs = [];
         $("#rec312119903").append($('<div class="addgif06"></div>'));
 
         figs.push({top: $('.addgif01')[0].getBoundingClientRect().top, left: $('.addgif01')[0].getBoundingClientRect().left});
-        figs.push({top: $('.addgif02').top, left: $('.addgif02').left});
-        figs.push({top: $('.addgif03').top, left: $('.addgif03').left});
-        figs.push({top: $('.addgif04').top, left: $('.addgif04').left});
-        figs.push({top: $('.addgif05').top, left: $('.addgif05').left});
-        figs.push({top: $('.addgif06').top, left: $('.addgif06').left});
-
-//$(".addgif01").css({top: (100 + Math.random()*$(window).height()*10)/100 +'%', left: (Math.random()*$(window).width()*10/100 - 10/100) +'%'});
+        figs.push({top: $('.addgif02')[0].getBoundingClientRect().top, left: $('.addgif02')[0].getBoundingClientRect().left});
+        figs.push({top: $('.addgif03')[0].getBoundingClientRect().top, right: $('.addgif03')[0].getBoundingClientRect().right});
+        figs.push({top: $('.addgif04')[0].getBoundingClientRect().top, left: $('.addgif04')[0].getBoundingClientRect().left});
+        figs.push({top: $('.addgif05')[0].getBoundingClientRect().top, left: $('.addgif05')[0].getBoundingClientRect().left});
+        figs.push({top: $('.addgif06')[0].getBoundingClientRect().top, left: $('.addgif06')[0].getBoundingClientRect().left});
 
         function tapHandler01( event ){
             $(".addgif01").css({top: (Math.random() - 0.5)*50 + figs[0].top, left: (Math.random() - 0.5)*50 + figs[0].left});
         }
         function tapHandler02( event ){
-            $(".addgif02").css({top: (40 - Math.random()*$("#rec312119903").height()*30)/100, left: (30 + Math.random()*$(window).width()*15)/100});
+            $(".addgif02").css({top: (Math.random() - 0.5)*100 + figs[1].top, left: (Math.random() - 0.5)*150 + figs[1].left});
         }
         function tapHandler03( event ){
-            $(".addgif03").css({top: Math.random()*$("#rec312119903").height()*0.33, right: Math.random()*$(window).width()*0.66});
+            $(".addgif03").css({top: (Math.random() - 0.5)*150 + figs[2].top, right: (Math.random() - 0.5)*50 + figs[2].right});
         }
         function tapHandler04( event ){
-            $(".addgif04").css({top: Math.random()*$("#rec312119903").height()*0.33 + $("#rec192970385").height()/2, left: Math.random()*$(window).width()*0.66});
+            $(".addgif04").css({top: (Math.random() - 0.5)*250 + figs[3].top, left: (Math.random() - 0.5)*250 + figs[3].left});
         }
         function tapHandler05( event ){
             $(".addgif05").css({top: Math.random()*$("#rec312119903").height()*0.33, left: Math.random()*$(window).width()*0.66});
