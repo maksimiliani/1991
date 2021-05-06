@@ -10,7 +10,7 @@ var figs = [];
 
         figs.push({top: $('.addgif01')[0].getBoundingClientRect().top, left: $('.addgif01')[0].getBoundingClientRect().left});
         figs.push({top: $('.addgif02')[0].getBoundingClientRect().top, left: $('.addgif02')[0].getBoundingClientRect().left});
-        figs.push({top: $('.addgif03')[0].getBoundingClientRect().top, right: $('.addgif03')[0].getBoundingClientRect().right});
+        figs.push({top: $('.addgif03')[0].getBoundingClientRect().top, left: $('.addgif03')[0].getBoundingClientRect().left});
         figs.push({top: $('.addgif04')[0].getBoundingClientRect().top, left: $('.addgif04')[0].getBoundingClientRect().left});
         figs.push({top: $('.addgif05')[0].getBoundingClientRect().top, left: $('.addgif05')[0].getBoundingClientRect().left});
         figs.push({top: $('.addgif06')[0].getBoundingClientRect().top, left: $('.addgif06')[0].getBoundingClientRect().left});
@@ -22,7 +22,7 @@ var figs = [];
             $(".addgif02").css({top: (Math.random() - 0.5)*5 + figs[1].top/$("#rec312119903").height()*100 + '%', left: (Math.random() - 0.5)*15 + figs[1].left/$(window).width()*100 + '%'});
         }
         function tapHandler03( event ){
-            $(".addgif03").css({top: (Math.random() - 0.5)*15 + figs[2].top/$("#rec312119903").height()*100 + '%', right: (Math.random() - 0.5)*15 + figs[2].right/$(window).width()*100 + '%'});
+            $(".addgif03").css({top: (Math.random() - 0.5)*15 + figs[2].top/$("#rec312119903").height()*100 + '%', right: (Math.random() - 0.5)*15 + figs[2].left/$(window).width()*100 + '%'});
         }
         function tapHandler04( event ){
             $(".addgif04").css({top: (Math.random() - 0.5)*15 + figs[3].top/$("#rec312119903").height()*100 + '%', left: (Math.random() - 0.5)*20 + figs[3].left/$(window).width()*100 + '%'});
