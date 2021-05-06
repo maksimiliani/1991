@@ -8,7 +8,7 @@
         $("#rec312119903").append($('<div class="addgif06"></div>'));
 
         function tapHandler01( event ){
-            $(".addgif01").css({top: (100 + Math.random()*$("#rec312119903").height()*10)/100, left: (Math.random()*$(window).width()*10 - 10)/100'});
+            $(".addgif01").css({top: (100 + Math.random()*$("#rec312119903").height()*10)/100, left: (Math.random()*$(window).width()*10 - 10)/100});
         }
         function tapHandler02( event ){
             $(".addgif02").css({top: (40 - Math.random()*$("#rec312119903").height()*30)/100, left: (30 + Math.random()*$(window).width()*15)/100});
