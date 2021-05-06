@@ -16,16 +16,16 @@ var figs = [];
         figs.push({top: $('.addgif06')[0].getBoundingClientRect().top, left: $('.addgif06')[0].getBoundingClientRect().left});
 
         function tapHandler01( event ){
-            $(".addgif01").css({top: (Math.random() - 0.5)*50 + figs[0].top, left: (Math.random() - 0.5)*50 + figs[0].left});
+            $(".addgif01").css({top: (Math.random() - 0.5)*10 + figs[0].top + '%', left: (Math.random() - 0.5)*10 + figs[0].left + '%'});
         }
         function tapHandler02( event ){
-            $(".addgif02").css({top: (Math.random() - 0.5)*100 + figs[1].top, left: (Math.random() - 0.5)*150 + figs[1].left});
+            $(".addgif02").css({top: (Math.random() - 0.5)*5 + figs[1].top + '%', left: (Math.random() - 0.5)*15 + figs[1].left + '%'});
         }
         function tapHandler03( event ){
-            $(".addgif03").css({top: (Math.random() - 0.5)*150 + figs[2].top, right: (Math.random() - 0.5)*50 + figs[2].right});
+            $(".addgif03").css({top: (Math.random() - 0.5)*15 + figs[2].top + '%', right: (Math.random() - 0.5)*15 + figs[2].right + '%'});
         }
         function tapHandler04( event ){
-            $(".addgif04").css({top: (Math.random() - 0.5)*250 + figs[3].top, left: (Math.random() - 0.5)*250 + figs[3].left});
+            $(".addgif04").css({top: (Math.random() - 0.5)*15 + figs[3].top + '%', left: (Math.random() - 0.5)*20 + figs[3].left + '%'});
         }
         function tapHandler05( event ){
             $(".addgif05").css({top: Math.random()*$("#rec312119903").height()*0.33, left: Math.random()*$(window).width()*0.66});
