@@ -1,3 +1,4 @@
+var figs = [];
 
     $( document ).ready(function() {
         $("#rec312119903").append($('<div class="addgif01"></div>'));
@@ -7,8 +8,17 @@
         $("#rec312119903").append($('<div class="addgif05"></div>'));
         $("#rec312119903").append($('<div class="addgif06"></div>'));
 
+        figs.push({top: $('.addgif01').top, left: $('.addgif01').left});
+        figs.push({top: $('.addgif02').top, left: $('.addgif02').left});
+        figs.push({top: $('.addgif03').top, left: $('.addgif03').left});
+        figs.push({top: $('.addgif04').top, left: $('.addgif04').left});
+        figs.push({top: $('.addgif05').top, left: $('.addgif05').left});
+        figs.push({top: $('.addgif06').top, left: $('.addgif06').left});
+
+//$(".addgif01").css({top: (100 + Math.random()*$(window).height()*10)/100 +'%', left: (Math.random()*$(window).width()*10/100 - 10/100) +'%'});
+
         function tapHandler01( event ){
-            $(".addgif01").css({top: (100 + Math.random()*$("#rec312119903").height()*10)/100, left: (Math.random()*$(window).width()*10 - 10)/100});
+            $(".addgif01").css({top: (Math.random() - 0.5)*50 + figs[0].top, left: (Math.random() - 0.5)*50 + figs[0].left});
         }
         function tapHandler02( event ){
             $(".addgif02").css({top: (40 - Math.random()*$("#rec312119903").height()*30)/100, left: (30 + Math.random()*$(window).width()*15)/100});
