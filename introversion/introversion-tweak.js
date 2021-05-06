@@ -8,7 +8,7 @@ var figs = [];
         $("#rec312119903").append($('<div class="addgif05"></div>'));
         $("#rec312119903").append($('<div class="addgif06"></div>'));
 
-        figs.push({top: $('.addgif01').top, left: $('.addgif01').left});
+        figs.push({top: $('.addgif01')[0].getBoundingClientRect().top, left: $('.addgif01')[0].getBoundingClientRect().left});
         figs.push({top: $('.addgif02').top, left: $('.addgif02').left});
         figs.push({top: $('.addgif03').top, left: $('.addgif03').left});
         figs.push({top: $('.addgif04').top, left: $('.addgif04').left});
