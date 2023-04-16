@@ -2,7 +2,7 @@
 var northEast = L.latLng(51, 40),
     southWest = L.latLng(46, 22);
 var bounds = L.latLngBounds(northEast, southWest);
-var map = L.map('map', { center: bounds.getCenter(), renderer: L.canvas(), zoom: 6, minZoom: 5, maxZoom: 22, zoomControl: false, preferCanvas: true });
+var map = L.map('map', { center: bounds.getCenter(), renderer: L.canvas(), zoom: 6, minZoom: 5, maxZoom: 22, zoomControl: false, preferCanvas: true, scrollWheelZoom: false });
 map.attributionControl.addAttribution('<a href="https://www.hromada4.org/" target="_blank">&copy; Громада 4.0 - Акселератор цифрової незламності | </a> <a href="https://map.edopomoga.gov.ua/" target="_blank">&copy; Мапа єДопомога | </a> <a href="https://www.openstreetmap.org/copyright" target="_blank"> &copy; OpenStreetMap contributors</a>');
 var openstreetmap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { id: "OpenStreetMap", layername: 'OpenStreetMap', preferCanvas: true }).addTo(map);
 var info = L.control({ position: 'topleft' });
