@@ -1,4 +1,3 @@
-
 var northEast = L.latLng(51, 40),
     southWest = L.latLng(46, 22);
 var bounds = L.latLngBounds(northEast, southWest);
@@ -36,7 +35,6 @@ function onEachFeatureGromada(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
-        //         dblclick: zoomToFeature
     });
     var props = layer.feature.properties
     layer.bindPopup(
@@ -57,12 +55,10 @@ var region_list = {}
 for (x in mezhi_oblastey.features) {
     region_list[mezhi_oblastey.features[x].properties.ADMIN_1] = []
 }
-console.log(region_list)
 for (x in mezhi_gromad_gromada4.features) {
     region_list[mezhi_gromad_gromada4.features[x].properties.ADMIN_1].push(`${mezhi_gromad_gromada4.features[x].properties.ADMIN_3} ${mezhi_gromad_gromada4.features[x].properties.TYPE}`)
 }
 function onEachFeatureOblast(feature, layer) {
-    //   console.log(layer)
     var props = layer.feature.properties
     var gromady_list_html = ``
     for (x in region_list[props.ADMIN_1]) {
@@ -110,7 +106,7 @@ map.getPane('pane').style.zIndex = 600;
 map.createPane('pane2');
 map.getPane('pane2').style.zIndex = 601;
 var mezhi_oblastey_layer = L.geoJson(mezhi_oblastey, {
-    pane: 'pane2', /*renderer: L.canvas(),*//* pmIgnore: true, snapIgnore: true,*/ id: "mezhi_oblastey_layer", layername: 'Межі областей', style: style_oblast, onEachFeature: onEachFeatureOblast
+    pane: 'pane2', id: "mezhi_oblastey_layer", layername: 'Межі областей', style: style_oblast, onEachFeature: onEachFeatureOblast
 }).addTo(map)
 var mezhi_gromad_gromada4_layer = L.geoJson(mezhi_gromad_gromada4, {
     pane: 'pane2', layername: themes_groups[1][0], style: style_gromady, onEachFeature: onEachFeatureGromada, filter: function (geoJsonFeature) {
@@ -165,7 +161,6 @@ legend.onAdd = function (map) {
 legend.addTo(map);
 var baseTree = {
     label: 'Базові карти',
-    //     selectAllCheckbox: 'Un/select all',
     children: [
         { label: 'Open Street Map', layer: openstreetmap }
     ]
