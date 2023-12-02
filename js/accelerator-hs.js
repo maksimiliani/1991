@@ -1,6 +1,6 @@
-let cell_tmp = {col: "", row: ""};
-let oldmap = {col: "", row: ""};
-let beforeopenmap = {col: "", row: ""};
+let cell_tmp = {col: ""};
+let oldmap = {col: ""};
+let beforeopenmap = {col: ""};
 let cell = {lastTriggered: null};
 
 let cell_container = 'hs-two-col';
@@ -49,28 +49,22 @@ function expandCell(target, double_click = true, scale = "15") {
     oldmap = beforeopenmap;
   }
 
-  let newmap = {col: "", row: ""};
+  let newmap = {col: ""};
 
   let inx = {
-    h:1 + getOrderIndex(target.target)%getStringCount(oldmap.col, "fr"),
-    v:1 + Math.floor(getOrderIndex(target.target)/getStringCount(oldmap.col, "fr"))
+    h:1 + getOrderIndex(target.target)%getStringCount(oldmap.col, "fr")
   };
 
-  console.log(getOrderIndex(target.target));
-  console.log(getStringCount(oldmap.col, "fr"));
-
   let maxcount = {
-    col: getStringCount(oldmap.col, "fr"),
-    row: getStringCount(oldmap.row, "fr"),
+    col: getStringCount(oldmap.col, "fr")
   }
   for (let i = 1; i <= maxcount.col; i++) {
     newmap.col += ((i == inx.h) ? (scale + 'fr ') : (((maxcount.col - Math.abs(inx.h - i))/(maxcount.col)) + 'fr '));
   }
   
-    if ((newmap.col == oldmap.col) && (newmap.row == oldmap.row) && double_click) {
+    if ((newmap.col == oldmap.col) && double_click) {
       cell_container_instance.style.gridTemplateColumns = beforeopenmap.col;
       beforeopenmap.col = "";
-      beforeopenmap.row = "";
     } else {
       cell_container_instance.style.gridTemplateColumns = newmap.col;
       beforeopenmap = oldmap;
