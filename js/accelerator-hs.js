@@ -7,6 +7,10 @@ let cell_container = 'hs-two-col';
 let cell_container_instance;
 let cell_set_instance;
 
+function getStringCount(string, lookfor) {;
+    return string.match(new RegExp(lookfor, 'g')).length
+}
+
 document.addEventListener("DOMContentLoaded", (event) => {
 
     cell_container_instance = document.querySelector(`.${cell_container}`);
