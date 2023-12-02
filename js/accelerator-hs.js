@@ -11,6 +11,10 @@ function getStringCount(string, lookfor) {;
     return string.match(new RegExp(lookfor, 'g')).length
 }
 
+function getOrderIndex(node) {
+    return Array.prototype.indexOf.call(node.parentNode.children, node);
+  }
+
 document.addEventListener("DOMContentLoaded", (event) => {
 
     cell_container_instance = document.querySelector(`.${cell_container}`);
