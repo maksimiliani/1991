@@ -56,6 +56,9 @@ function expandCell(target, double_click = true, scale = "15") {
     v:1 + Math.floor(getOrderIndex(target.target)/getStringCount(oldmap.col, "fr"))
   };
 
+  console.log(getOrderIndex(target.target));
+  console.log(getStringCount(oldmap.col, "fr"));
+
   let maxcount = {
     col: getStringCount(oldmap.col, "fr"),
     row: getStringCount(oldmap.row, "fr"),
