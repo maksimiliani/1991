@@ -18,7 +18,7 @@ function getOrderIndex(node) {
 document.addEventListener("DOMContentLoaded", (event) => {
 
     cell_container_instance = document.querySelector(`.${cell_container}`);
-    cell_set_instance = document.querySelectorAll(`.${cell_container} > div`);
+    cell_set_instance = document.querySelectorAll(`.${cell_container} > a`);
 
   if (cell_tmp.col == "") {
     for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-columns"], "px"); i++) {
