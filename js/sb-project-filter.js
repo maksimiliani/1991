@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 
     document.querySelectorAll('.w-dyn-item .donor-tag').forEach((element) => {
-        element.parent().addClass(element.textContent.toLowerCase().replace(' ', '-'));
+        element.parentElement.addClass(element.textContent.toLowerCase().replace(' ', '-'));
       });
 });
 /*
