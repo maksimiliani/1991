@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const industry_tag = document.getElementsByClassName("industry-tag");
     for (var i=0; i < donor_tag.length; i++) {
       let text_el = donor_tag[i].textContent;
+      if (text_el == '') continue;
       let val_el = text_el.toLowerCase().replace(' ', '-');
       if (!check_presence(text_el)) {
         all_existing_donors.push(text_el);
@@ -25,7 +26,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 
     document.querySelectorAll('.w-dyn-item .donor-tag').forEach((element) => {
-        element.parentElement.classList.add(element.textContent.toLowerCase().replace(' ', '-'));
+        if(element.textContent != '') {
+            element.parentElement.classList.add(element.textContent.toLowerCase().replace(' ', '-'));
+        }
       });
 });
 /*
