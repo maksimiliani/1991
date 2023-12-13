@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     for (var i=0; i < donor_tag.length; i++) {
       let text_el = donor_tag[i].textContent;
       let val_el = text_el.toLowerCase().replace(' ', '-');
-      if (!check_presence(type_el)) {
-        all_existing_donors.push(type_el);
+      if (!check_presence(text_el)) {
+        all_existing_donors.push(text_el);
 
         let opt = document.createElement('option');
             opt.value = val_el;
