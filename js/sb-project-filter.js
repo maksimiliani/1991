@@ -14,20 +14,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
     for (var i=0; i < donor_tag.length; i++) {
       let text_el = donor_tag[i].textContent;
       if (text_el == '') continue;
-      let val_el = text_el.toLowerCase().replace(' ', '-');
+      let val_el = text_el.toLowerCase().split(' ').join('-');
       if (!check_presence(text_el)) {
         all_existing_donors.push(text_el);
 
         let opt = document.createElement('option');
             opt.value = val_el;
             opt.innerHTML = text_el;
-        document.querySelector('#industry-dd').appendChild(opt)
+        document.querySelector('#donor-dd').appendChild(opt)
       }
     }
 
     document.querySelectorAll('.w-dyn-item .donor-tag').forEach((element) => {
         if(element.textContent != '') {
-            element.parentElement.classList.add(element.textContent.toLowerCase().replace(' ', '-'));
+            element.parentElement.classList.add(element.textContent.toLowerCase().split(' ').join('-'));
         }
       });
 });
