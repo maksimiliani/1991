@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     $("#donor-dd").change(function(){
         donorFilter = document.querySelector('#donor-dd').value;
         if (donorFilter == '') {
-          $grid.isotope();
+          $grid.isotope({filter: '.collection-item'});
         } else {
           $grid.isotope({filter: `.${donorFilter}`});
         }
