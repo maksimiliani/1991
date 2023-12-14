@@ -53,7 +53,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
     $("#donor-dd").change(function(){
         donorFilter = document.querySelector('#donor-dd').value;
-        $grid.isotope({filter: `.${donorFilter}`});
+        if (donorFilter == '') {
+          $grid.isotope({filter: `.${donorFilter}`});
+        } else {
+          $grid.isotope();
+        }
      });
 });
 /*
