@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
   
     $("#donor-dd").change(function(){
-        donorFilter = $(this).children("option:selected").val();
+        donorFilter = document.querySelector('#donor-dd').value;
          $grid.isotope();
      });
 });
