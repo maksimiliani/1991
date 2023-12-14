@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
     // init Isotope
     const $grid = $('#grid').isotope({
-        //layoutMode: 'fitRows',
+        layoutMode: 'fitRows',
         itemSelector: '.collection-item',
         stagger: 30,
             filter: function() {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
     $("#donor-dd").change(function(){
         donorFilter = document.querySelector('#donor-dd').value;
-         $grid.isotope();
+        $grid.isotope({filter: `.${donorFilter}`});
      });
 });
 /*
