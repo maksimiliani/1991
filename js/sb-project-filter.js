@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let opt = document.createElement('option');
             opt.value = val_el;
             opt.innerHTML = text_el;
-        document.querySelector('#donor-dd').appendChild(opt)
+        document.querySelector('#donor-dd').appendChild(opt);
       }
     }
 
@@ -29,7 +29,33 @@ document.addEventListener("DOMContentLoaded", (event) => {
         if(element.textContent != '') {
             element.parentElement.classList.add(element.textContent.toLowerCase().split(' ').join('-'));
         }
-      });
+    });
+
+    // quick search regex
+    let qsRegex;
+    let donorFilter;
+    let catFilter;
+  
+    // init Isotope
+    const $grid = document.querySelector('#grid').isotope({
+        layoutMode: 'fitRows',
+        itemSelector: '.w-dyn-item',
+        stagger: 30,
+            filter: function() {
+            var $this = this;
+            var donorResult = donorFilter ? $this.is( donorFilter ) : true;
+            return donorResult;
+          }
+    });
+  
+    // reveal all items after init
+    const $items = document.querySelector('#grid').querySelectorAll('.w-dyn-item');
+    $grid.classList.add('is-showing-items').isotope( 'revealItemElements', $items );
+
+    document.querySelector('#donor-dd').onchange = function() {
+        donorFilter = document.querySelector('#donor-dd').value;
+        $grid.isotope();
+    };
 });
 /*
 // document ready wrapper
