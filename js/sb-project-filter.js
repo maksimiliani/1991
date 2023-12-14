@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const $items = $grid.find('.w-dyn-item');
     $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
   
-    $("#field_type").change(function(){
+    $("#donor-dd").change(function(){
         donorFilter = $(this).children("option:selected").val();
          $grid.isotope();
      });
