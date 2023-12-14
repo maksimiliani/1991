@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       }
     }
 
-    document.querySelectorAll('.w-dyn-item .donor-tag').forEach((element) => {
+    document.querySelectorAll('.donor-tag').forEach((element) => {
         if(element.textContent != '') {
             element.parentElement.classList.add(element.textContent.toLowerCase().split(' ').join('-'));
         }
@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
     // init Isotope
     const $grid = $('#grid').isotope({
-        layoutMode: 'fitRows',
-        itemSelector: '.w-dyn-item',
+        //layoutMode: 'fitRows',
+        itemSelector: '.collection-item',
         stagger: 30,
             filter: function() {
             var $this = $(this);
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   
     // reveal all items after init
-    const $items = $grid.find('.w-dyn-item');
+    const $items = $grid.find('.collection-item');
     $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
   
     $("#donor-dd").change(function(){
