@@ -31,6 +31,35 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 
+    let donorFilter;
+    let catFilter;
+  
+    // init Isotope
+    const $grid = $('#grid').isotope({
+        layoutMode: 'fitRows',
+        itemSelector: '.w-dyn-item',
+        stagger: 30,
+            filter: function() {
+            var $this = $(this);
+//            var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+            var typeResult = donorFilter ? $this.is( donorFilter ) : true;
+            return typeResult;
+          }
+    });
+  
+    // reveal all items after init
+    const $items = $grid.find('.w-dyn-item');
+    $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
+  
+    $("#field_type").change(function(){
+        donorFilter = $(this).children("option:selected").val();
+         $grid.isotope();
+     });
+});
+/*
+
+
+
     // quick search regex
     let qsRegex;
     let donorFilter;
@@ -56,8 +85,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         donorFilter = document.querySelector('#donor-dd').value;
         $grid.isotope();
     };
-});
-/*
+
+
 // document ready wrapper
 $(document).ready( function() {
 
