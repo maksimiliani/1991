@@ -60,13 +60,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
         layoutMode: 'fitRows',
         itemSelector: '.collection-item',
         stagger: 30,
-            filter: function() {
-            var $this = $(this);
-//            var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
-            var typeResult = donorFilter ? $this.is( donorFilter ) : true;
-            var industryResult = industryFilter ? $this.is( industryFilter ) : true;
-            return industryResult && typeResult;
-          }
+        filter: function() {
+          industryFilter = document.querySelector('#industry-dd').value;
+          donorFilter = document.querySelector('#donor-dd').value;
+
+          industryFilter = (industryFilter == '') ? '' : `.${industryFilter}`;
+          donorFilter = (donorFilter == '') ? '' : `.${donorFilter}`;
+
+          /*if (industryFilter == '' && donorFilter == '') {
+            $grid.isotope({filter: '.collection-item'});
+          } else {
+            $grid.isotope({filter: `${donorFilter} && ${industryFilter}`});
+          }*/
+
+          //var $this = $(this);
+          //var typeResult = donorFilter ? $this.is( donorFilter ) : true;
+          //var industryResult = industryFilter ? $this.is( industryFilter ) : true;
+          return donorFilter && industryFilter;
+        }
     });
   
     // reveal all items after init
@@ -74,11 +85,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
     $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
   
     $("#donor-dd").change(function(){
-      updateList();
+      //updateList();
+      $grid.isotope();
      });
 
      $("#industry-dd").change(function(){
-      updateList();
+      //updateList();
+      $grid.isotope();
    });
 
    function updateList() {
