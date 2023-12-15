@@ -74,22 +74,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
     $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
   
     $("#donor-dd").change(function(){
-        donorFilter = document.querySelector('#donor-dd').value;
-        if (donorFilter == '') {
-          $grid.isotope({filter: '.collection-item'});
-        } else {
-          $grid.isotope();
-        }
+      updateList();
      });
 
      $("#industry-dd").change(function(){
+      updateList();
+   });
+
+   function updateList() {
       industryFilter = document.querySelector('#industry-dd').value;
-      if (industryFilter == '') {
+      donorFilter = document.querySelector('#donor-dd').value;
+      if (industryFilter == '' && donorFilter == '') {
         $grid.isotope({filter: '.collection-item'});
       } else {
-        $grid.isotope();
+        $grid.isotope({filter: `.${industryFilter} .${donorFilter}`});
       }
-   });
+    }
 });
 /*
 
