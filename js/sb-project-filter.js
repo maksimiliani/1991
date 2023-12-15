@@ -75,6 +75,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     $("#donor-dd").change(function(){
       industryFilter = document.querySelector('#industry-dd').value;
       donorFilter = document.querySelector('#donor-dd').value;
+      industryFilter = (industryFilter == '') ? '' : `.${industryFilter}`;
+      donorFilter = (donorFilter == '') ? '' : `.${donorFilter}`;
       $grid.isotope();
       //updateList();
      });
@@ -82,6 +84,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
      $("#industry-dd").change(function(){
       industryFilter = document.querySelector('#industry-dd').value;
       donorFilter = document.querySelector('#donor-dd').value;
+      industryFilter = (industryFilter == '') ? '' : `.${industryFilter}`;
+      donorFilter = (donorFilter == '') ? '' : `.${donorFilter}`;
       $grid.isotope();
       //updateList();
    });
