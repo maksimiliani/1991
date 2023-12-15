@@ -84,10 +84,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
    function updateList() {
       industryFilter = document.querySelector('#industry-dd').value;
       donorFilter = document.querySelector('#donor-dd').value;
+
+      industryFilter = (industryFilter == '') ? '' : `.${donorFilter}`;
+      donorFilter = (donorFilter == '') ? '' : `.${donorFilter}`;
       if (industryFilter == '' && donorFilter == '') {
         $grid.isotope({filter: '.collection-item'});
       } else {
-        $grid.isotope({filter: `.${industryFilter} .${donorFilter}`});
+        $grid.isotope({filter: `${industryFilter} ${donorFilter}`});
       }
     }
 });
