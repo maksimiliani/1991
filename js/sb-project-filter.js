@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //            var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
             var typeResult = donorFilter ? $this.is( donorFilter ) : true;
             var industryResult = industryFilter ? $this.is( industryFilter ) : true;
-            return industryResult || typeResult;
+            return industryResult && typeResult;
           }
     });
   
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         if (donorFilter == '') {
           $grid.isotope({filter: '.collection-item'});
         } else {
-          $grid.isotope({filter: `.${donorFilter}`});
+          $grid.isotope();
         }
      });
 
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       if (industryFilter == '') {
         $grid.isotope({filter: '.collection-item'});
       } else {
-        $grid.isotope({filter: `.${industryFilter}`});
+        $grid.isotope();
       }
    });
 });
