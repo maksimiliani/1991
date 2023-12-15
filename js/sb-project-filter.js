@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       industryFilter = document.querySelector('#industry-dd').value;
       donorFilter = document.querySelector('#donor-dd').value;
 
-      industryFilter = (industryFilter == '') ? '' : `.${donorFilter}`;
+      industryFilter = (industryFilter == '') ? '' : `.${industryFilter}`;
       donorFilter = (donorFilter == '') ? '' : `.${donorFilter}`;
 
       console.log(`${industryFilter} ${donorFilter}`);
