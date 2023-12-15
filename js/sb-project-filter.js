@@ -88,11 +88,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
       industryFilter = (industryFilter == '') ? '' : `.${industryFilter}`;
       donorFilter = (donorFilter == '') ? '' : `.${donorFilter}`;
 
-      console.log(`${industryFilter} ${donorFilter}`);
       if (industryFilter == '' && donorFilter == '') {
         $grid.isotope({filter: '.collection-item'});
       } else {
-        $grid.isotope({filter: `${industryFilter} ${donorFilter}`});
+        $grid.isotope({filter: `${donorFilter} ${industryFilter}`});
       }
     }
 });
