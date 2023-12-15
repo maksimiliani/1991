@@ -73,21 +73,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
   
     $("#donor-dd").change(function(){
-      industryFilter = document.querySelector('#industry-dd').value;
-      donorFilter = document.querySelector('#donor-dd').value;
-      industryFilter = (industryFilter == '') ? '' : `.${industryFilter}`;
-      donorFilter = (donorFilter == '') ? '' : `.${donorFilter}`;
-      $grid.isotope();
-      //updateList();
+      updateList();
      });
 
      $("#industry-dd").change(function(){
-      industryFilter = document.querySelector('#industry-dd').value;
-      donorFilter = document.querySelector('#donor-dd').value;
-      industryFilter = (industryFilter == '') ? '' : `.${industryFilter}`;
-      donorFilter = (donorFilter == '') ? '' : `.${donorFilter}`;
-      $grid.isotope();
-      //updateList();
+      updateList();
    });
 
    function updateList() {
@@ -96,12 +86,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
       industryFilter = (industryFilter == '') ? '' : `.${industryFilter}`;
       donorFilter = (donorFilter == '') ? '' : `.${donorFilter}`;
-
+      $grid.isotope();
+/*
       if (industryFilter == '' && donorFilter == '') {
         $grid.isotope({filter: '.collection-item'});
       } else {
         $grid.isotope({filter: `${donorFilter} && ${industryFilter}`});
-      }
+      }*/
     }
 });
 /*
