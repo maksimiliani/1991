@@ -1,4 +1,5 @@
 var all_existing_donors = [];
+var all_existing_industries = [];
 
 
 function check_presence(elem, array = all_existing_donors) {
@@ -25,14 +26,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
       }
     }
 
-    document.querySelectorAll('.donor-tag').forEach((element) => {
+    for (var i=0; i < industry_tag.length; i++) {
+      let text_el = industry_tag[i].textContent;
+      if (text_el == '') continue;
+      let val_el = text_el.toLowerCase().split(' ').join('-');
+      if (!check_presence(text_el, all_existing_industries)) {
+        all_existing_industries.push(text_el);
+
+        let opt = document.createElement('option');
+            opt.value = val_el;
+            opt.innerHTML = text_el;
+        document.querySelector('#industry-dd').appendChild(opt);
+      }
+    }
+
+    document.querySelectorAll('.industry-tag').forEach((element) => {
         if(element.textContent != '') {
-            element.parentElement.classList.add(element.textContent.toLowerCase().split(' ').join('-'));
+            element.parentElement.parentElement.parentElement.parentElement.classList.add(element.textContent.toLowerCase().split(' ').join('-'));
         }
     });
 
+    document.querySelectorAll('.donor-tag').forEach((element) => {
+      if(element.textContent != '') {
+          element.parentElement.classList.add(element.textContent.toLowerCase().split(' ').join('-'));
+      }
+    });
+
     let donorFilter;
-    let catFilter;
+    let industryFilter;
   
     // init Isotope
     const $grid = $('#grid').isotope({
@@ -43,7 +64,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
             var $this = $(this);
 //            var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
             var typeResult = donorFilter ? $this.is( donorFilter ) : true;
-            return typeResult;
+            var industryResult = industryFilter ? $this.is( industryFilter ) : true;
+            return industryResult || typeResult;
           }
     });
   
@@ -59,6 +81,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
           $grid.isotope({filter: `.${donorFilter}`});
         }
      });
+
+     $("#industry-dd").change(function(){
+      industryFilter = document.querySelector('#industry-dd').value;
+      if (industryFilter == '') {
+        $grid.isotope({filter: '.collection-item'});
+      } else {
+        $grid.isotope({filter: `.${industryFilter}`});
+      }
+   });
 });
 /*
 
