@@ -84,13 +84,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.querySelectorAll('.filter-donor').forEach((element) => {
       element.addEventListener("click", function() {
         if (! this.classList.contains('selected')) {
+          current_donor = "";
           document.querySelectorAll('.filter-donor').forEach((el) => {
             el.classList.remove("selected");
           });
           this.classList.add("selected");
           current_donor = this.textContent.toLowerCase().split(' ').join('-');
           updateList();
-        };
+        }
       }); 
     });
 
