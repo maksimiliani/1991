@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             el.classList.remove("selected");
           });
           this.classList.add("selected");
-          current_donor = this.innerHTML;
+          current_donor = this.textContent.toLowerCase().split(' ').join('-');
           updateList();
         };
       }); 
