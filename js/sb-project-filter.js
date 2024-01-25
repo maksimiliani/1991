@@ -1,5 +1,6 @@
 var all_existing_donors = [];
 var all_existing_industries = [];
+let current_donor = "";
 
 
 function check_presence(elem, array = all_existing_donors) {
@@ -19,10 +20,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
       if (!check_presence(text_el)) {
         all_existing_donors.push(text_el);
 
-        let opt = document.createElement('option');
+        /*let opt = document.createElement('option');
             opt.value = val_el;
             opt.innerHTML = text_el;
-        document.querySelector('#donor-dd').appendChild(opt);
+        document.querySelector('#donor-dd').appendChild(opt);*/
       }
     }
 
@@ -72,17 +73,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const $items = $grid.find('.collection-item');
     $grid.addClass('is-showing-items').isotope( 'revealItemElements', $items );
   
-    $("#donor-dd").change(function(){
+/*    $("#donor-dd").change(function(){
       updateList();
-     });
+     }); */
 
      $("#industry-dd").change(function(){
       updateList();
-   });
+    });
+
+    document.querySelectorAll('.filter-donor').forEach((element) => {
+      element.addEventListener("click", function() {
+        if (! this.classList.contains('selected')) {
+          document.querySelectorAll('.filter-donor').forEach((el) => {
+            el.classList.remove("selected");
+          });
+          this.classList.add("selected");
+          current_donor = this.innerHTML;
+          updateList();
+        };
+      }); 
+    });
 
    function updateList() {
       industryFilter = document.querySelector('#industry-dd').value;
-      donorFilter = document.querySelector('#donor-dd').value;
+      donorFilter = current_donor; //document.querySelector('#donor-dd').value;
 
       industryFilter = (industryFilter == '') ? '' : `.${industryFilter}`;
       donorFilter = (donorFilter == '') ? '' : `.${donorFilter}`;
