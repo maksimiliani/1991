@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
-function expandCell(target, double_click = true, scale = "15") {
+function expandCell(target, double_click = true, scale = "35") {
   if ((cell.lastTriggered == target.target) && !double_click) return;
   if (beforeopenmap.row == "") {
     for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px"); i++) {
