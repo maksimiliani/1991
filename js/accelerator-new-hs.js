@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   cell_set_instance.forEach(item => {
     item.addEventListener("mouseenter", (e) => {
-        expandCell(e, false, "1.2");
+        expandCell(e, false, "1.8");
       });
     });
 });
