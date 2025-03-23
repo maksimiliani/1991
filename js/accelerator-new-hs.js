@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   cell_set_instance.forEach(item => {
     item.addEventListener("mouseenter", (e) => {
-        expandCell(e, false, "1.8");
+        expandCell(e, false, 0.8");
       });
     });
 });
 
-function expandCell(target, double_click = true, scale = "35") {
+function expandCell(target, double_click = true, scale = "15") {
   if ((cell.lastTriggered == target.target) && !double_click) return;
   if (beforeopenmap.row == "") {
     for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px"); i++) {
