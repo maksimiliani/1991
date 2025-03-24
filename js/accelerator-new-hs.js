@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   cell_container_instance.addEventListener("mouseout", (e) => {
     cell_container_instance.style.gridTemplateRos = cell_tmp.row;
     cell.lastTriggered = null;
+
+    console.log('mouseout', cell_tmp.row);
   });
 
   cell_set_instance.forEach(item => {
@@ -56,13 +58,9 @@ function expandCell(target, double_click = true, scale = "15") {
     h:1 + getOrderIndex(target.target)%getStringCount(oldmap.row, "vh")
   };
 
-    console.log ("inx", inx);
-
   let maxcount = {
     row: getStringCount(oldmap.row, "vh")
   }
-
-    console.log ("maxcount", maxcount);
     
   for (let i = 1; i <= maxcount.row; i++) {
     newmap.row += ((i == inx.h) ? (scale + 'vh ') : ((100 - scale)/(maxcount.row - 1) + 'vh '));
