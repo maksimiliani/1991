@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
   
   cell_container_instance.addEventListener("mouseout", (e) => {
-    cell_container_instance.style.gridTemplateRos = cell_tmp.row;
+    cell_container_instance.style.gridTemplateRows = cell_tmp.row;
     cell.lastTriggered = null;
 
     console.log('mouseout', cell_tmp.row);
