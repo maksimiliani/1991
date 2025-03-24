@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   if (cell_tmp.row == "") {
     for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px"); i++) {
-      cell_tmp.row += '1fr ';
+      cell_tmp.row += '33vh ';
     }
     oldmap = cell_tmp;
     cell_container_instance.style.gridTemplateRows = oldmap.row;
