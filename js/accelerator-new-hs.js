@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   if (cell_tmp.row == "") {
     for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px"); i++) {
-      cell_tmp.row += '33vh ';
+      cell_tmp.row += '33.33vh ';
     }
     oldmap = cell_tmp;
     cell_container_instance.style.gridTemplateRows = oldmap.row;
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   cell_set_instance.forEach(item => {
     item.addEventListener("mouseenter", (e) => {
-        expandCell(e, false, "2");
+        expandCell(e, false, "80");
       });
     });
 });
@@ -44,7 +44,7 @@ function expandCell(target, double_click = true, scale = "15") {
   if ((cell.lastTriggered == target.target) && !double_click) return;
   if (beforeopenmap.row == "") {
     for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px"); i++) {
-      beforeopenmap.row += '1fr ';
+      beforeopenmap.row += '33.33vh ';
     }
     oldmap = beforeopenmap;
   }
@@ -52,14 +52,14 @@ function expandCell(target, double_click = true, scale = "15") {
   let newmap = {row: ""};
 
   let inx = {
-    h:1 + getOrderIndex(target.target)%getStringCount(oldmap.row, "fr")
+    h:1 + getOrderIndex(target.target)%getStringCount(oldmap.row, "vh")
   };
 
   let maxcount = {
-    row: getStringCount(oldmap.row, "fr")
+    row: getStringCount(oldmap.row, "vh")
   }
   for (let i = 1; i <= maxcount.row; i++) {
-    newmap.row += ((i == inx.h) ? (scale + 'fr ') : (((maxcount.row - Math.abs(inx.h - i))/(maxcount.row)) + 'fr '));
+    newmap.row += ((i == inx.h) ? (scale + 'vh ') : (((maxcount.row - Math.abs(inx.h - i))/(maxcount.row)) + 'vh '));
   }
   
     if ((newmap.row == oldmap.row) && double_click) {
