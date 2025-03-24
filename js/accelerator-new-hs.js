@@ -42,9 +42,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 function expandCell(target, double_click = true, scale = "15") {
   if ((cell.lastTriggered == target.target) && !double_click) return;
+  let maxc = getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px");
   if (beforeopenmap.row == "") {
-    for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px"); i++) {
-      beforeopenmap.row += '33.33vh ';
+    for (let i = 1; i <= maxc; i++) {
+      beforeopenmap.row += 100/maxc + 'vh ';
     }
     oldmap = beforeopenmap;
   }
@@ -64,7 +65,7 @@ function expandCell(target, double_click = true, scale = "15") {
     console.log ("maxcount", maxcount);
     
   for (let i = 1; i <= maxcount.row; i++) {
-    newmap.row += ((i == inx.h) ? (scale + 'vh ') : ('10vh ');
+    newmap.row += ((i == inx.h) ? (scale + 'vh ') : ((100 - scale)/(maxcount.row - 1) + 'vh '));
   }
   
     if ((newmap.row == oldmap.row) && double_click) {
