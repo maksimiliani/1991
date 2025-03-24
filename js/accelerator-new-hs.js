@@ -64,7 +64,7 @@ function expandCell(target, double_click = true, scale = "15") {
     console.log ("maxcount", maxcount);
     
   for (let i = 1; i <= maxcount.row; i++) {
-    newmap.row += ((i == inx.h) ? (scale + 'vh ') : (((maxcount.row - Math.abs(inx.h - i))/(maxcount.row)) + 'vh '));
+    newmap.row += ((i == inx.h) ? (scale + 'vh ') : ('10vh ');
   }
   
     if ((newmap.row == oldmap.row) && double_click) {
