@@ -55,9 +55,14 @@ function expandCell(target, double_click = true, scale = "15") {
     h:1 + getOrderIndex(target.target)%getStringCount(oldmap.row, "vh")
   };
 
+    console.log ("inx", inx);
+
   let maxcount = {
     row: getStringCount(oldmap.row, "vh")
   }
+
+    console.log ("maxcount", maxcount);
+    
   for (let i = 1; i <= maxcount.row; i++) {
     newmap.row += ((i == inx.h) ? (scale + 'vh ') : (((maxcount.row - Math.abs(inx.h - i))/(maxcount.row)) + 'vh '));
   }
