@@ -18,7 +18,7 @@ function getOrderIndex(node) {
 document.addEventListener("DOMContentLoaded", (event) => {
 
     cell_container_instance = document.querySelector(`.${cell_container}`);
-    cell_set_instance = document.querySelectorAll(`.${cell_container} > a`);
+    cell_set_instance = document.querySelectorAll(`.${cell_container} > *`);
 
   if (cell_tmp.row == "") {
     for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px"); i++) {
@@ -31,8 +31,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   cell_container_instance.addEventListener("mouseout", (e) => {
     cell_container_instance.style.gridTemplateRows = cell_tmp.row;
     cell.lastTriggered = null;
-
-    console.log('mouseout', cell_tmp.row);
   });
 
   cell_set_instance.forEach(item => {
