@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   cell_set_instance.forEach(item => {
     item.addEventListener("mouseenter", (e) => {
-        expandCell(e, false, cell_size);
+        expandCell(e.target, false, cell_size);
       });
     });
 
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function expandCell(target, double_click = true, scale = "15") {
-  if ((cell.lastTriggered == target.target) && !double_click) return;
+  if ((cell.lastTriggered == target) && !double_click) return;
   let maxc = getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px");
   if (beforeopenmap.row == "") {
     for (let i = 1; i <= maxc; i++) {
@@ -56,7 +56,7 @@ function expandCell(target, double_click = true, scale = "15") {
   let newmap = {row: ""};
 
   let inx = {
-    h:1 + getOrderIndex(target.target)%getStringCount(oldmap.row, "vh")
+    h:1 + getOrderIndex(target)%getStringCount(oldmap.row, "vh")
   };
 
   let maxcount = {
@@ -77,5 +77,5 @@ function expandCell(target, double_click = true, scale = "15") {
 
     oldmap = newmap;
 
-    cell.lastTriggered = target.target;
+    cell.lastTriggered = target;
 }
