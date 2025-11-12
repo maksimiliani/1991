@@ -6,7 +6,7 @@ let cell = {lastTriggered: null};
 let cell_container = 'home-new';
 let cell_container_instance;
 let cell_set_instance;
-let cell_size = "60";
+let cell_size = "70";
 
 function getStringCount(string, lookfor) {;
     return string.match(new RegExp(lookfor, 'g')).length
