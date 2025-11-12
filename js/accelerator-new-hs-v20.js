@@ -38,7 +38,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
   cell_set_instance.forEach((item, index) => {
     item.addEventListener("mouseenter", (e) => {
         if (index > 0) cell_set_instance[0].classList.remove("hide");
-        else if (!cell_set_instance[0].classList.contains("hide")) cell_set_instance[0].classList.add("hide");
+        else {
+          if (!cell_set_instance[0].classList.contains("hide")) cell_set_instance[0].classList.add("hide");
+          console.log("first hov");
+        }
         expandCell(e.target, false, cell_size);
       });
     });
