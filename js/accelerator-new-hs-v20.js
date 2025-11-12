@@ -37,9 +37,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   cell_set_instance.forEach((item, index) => {
     item.addEventListener("mouseenter", (e) => {
-        if (index == 0) cell_set_instance[0].classList.remove("hide");
+      let bg_highlight = cell_set_instance[0].querySelector('.hover-mask');
+        if (index == 0) bg_highlight.classList.remove("hide");
         else
-          if (!cell_set_instance[0].classList.contains("hide")) cell_set_instance[0].classList.add("hide");
+          if (!bg_highlight.classList.contains("hide")) bg_highlight.classList.add("hide");
         expandCell(e.target, false, cell_size);
       });
     });
