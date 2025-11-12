@@ -35,8 +35,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     expandCell(cell_set_instance[0], false, cell_size);
   });
 
-  cell_set_instance.forEach(item => {
+  cell_set_instance.forEach((item, index) => {
     item.addEventListener("mouseenter", (e) => {
+        if (index > 0) cell_set_instance[0].classList.remove("hide");
+        else if (!cell_set_instance[0].classList.contains("hide")) cell_set_instance[0].classList.add("hide");
         expandCell(e.target, false, cell_size);
       });
     });
