@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function expandCell(target, double_click = true, scale = "15") {
-  if (target === cell_set_instance[0]) console.log("yes");
+  if (target == cell_set_instance[0]) console.log("yes"); else console.log("no");
 
   if ((cell.lastTriggered == target) && !double_click) return;
   let maxc = getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px");
