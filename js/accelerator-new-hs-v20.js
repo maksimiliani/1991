@@ -38,9 +38,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
   cell_set_instance.forEach((item, index) => {
     item.addEventListener("mouseenter", (e) => {
       let bg_highlight = cell_set_instance[0].querySelector('.hover-mask');
-        if (index == 0) bg_highlight.classList.remove("hide");
-        else
+      let descr1991 = cell_set_instance[0].querySelector('.new-home-p');
+        if (index == 0) {
+          bg_highlight.classList.remove("hide");
+          descr1991.classList.remove("hidden");
+        } else {
           if (!bg_highlight.classList.contains("hide")) bg_highlight.classList.add("hide");
+          if (!descr1991.classList.contains("hidden")) descr1991.classList.add("hidden");
+        }
         expandCell(e.target, false, cell_size);
       });
     });
