@@ -21,11 +21,10 @@ function getOrderIndex(node) {
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
-  bg_highlight = cell_set_instance[0].querySelector('.hover-mask');
-  descr1991 = cell_set_instance[0].querySelector('.new-home-p');
-
   cell_container_instance = document.querySelector(`.${cell_container}`);
   cell_set_instance = document.querySelectorAll(`.${cell_container} > *`);
+  bg_highlight = cell_set_instance[0].querySelector('.hover-mask');
+  descr1991 = cell_set_instance[0].querySelector('.new-home-p');
 
   if (cell_tmp.row == "") {
     for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px"); i++) {
