@@ -8,6 +8,9 @@ let cell_container_instance;
 let cell_set_instance;
 let cell_size = "70";
 
+let bg_highlight;
+let descr1991;
+
 function getStringCount(string, lookfor) {;
     return string.match(new RegExp(lookfor, 'g')).length
 }
@@ -18,8 +21,11 @@ function getOrderIndex(node) {
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
-    cell_container_instance = document.querySelector(`.${cell_container}`);
-    cell_set_instance = document.querySelectorAll(`.${cell_container} > *`);
+  bg_highlight = cell_set_instance[0].querySelector('.hover-mask');
+  descr1991 = cell_set_instance[0].querySelector('.new-home-p');
+
+  cell_container_instance = document.querySelector(`.${cell_container}`);
+  cell_set_instance = document.querySelectorAll(`.${cell_container} > *`);
 
   if (cell_tmp.row == "") {
     for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px"); i++) {
@@ -33,12 +39,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     cell_container_instance.style.gridTemplateRows = cell_tmp.row;
     cell.lastTriggered = null;
     expandCell(cell_set_instance[0], false, cell_size);
+    bg_highlight.classList.remove("hide");
+    descr1991.classList.remove("hidden");
   });
 
   cell_set_instance.forEach((item, index) => {
     item.addEventListener("mouseenter", (e) => {
-      let bg_highlight = cell_set_instance[0].querySelector('.hover-mask');
-      let descr1991 = cell_set_instance[0].querySelector('.new-home-p');
         if (index == 0) {
           bg_highlight.classList.remove("hide");
           descr1991.classList.remove("hidden");
@@ -54,8 +60,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function expandCell(target, double_click = true, scale = "15") {
-  if (target == cell_set_instance[0]) console.log("yes"); else console.log("no");
-
   if ((cell.lastTriggered == target) && !double_click) return;
   let maxc = getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px");
   if (beforeopenmap.row == "") {
