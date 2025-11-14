@@ -7,6 +7,7 @@ let cell_container = 'home-new';
 let cell_container_instance;
 let cell_set_instance;
 let cell_size = "70";
+let breakpoint = 992;
 
 let bg_highlight;
 let descr1991;
@@ -35,6 +36,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
   
   cell_container_instance.addEventListener("mouseout", (e) => {
+    if (window.innerWidth < breakpoint) return;
+
     cell_container_instance.style.gridTemplateRows = cell_tmp.row;
     cell.lastTriggered = null;
     expandCell(cell_set_instance[0], false, cell_size);
@@ -43,6 +46,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
   cell_set_instance.forEach((item, index) => {
+    if (window.innerWidth < breakpoint) return;
+
     item.addEventListener("mouseenter", (e) => {
         if (index == 0) {
           bg_highlight.classList.remove("hide");
@@ -59,6 +64,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function expandCell(target, double_click = true, scale = "15") {
+  if (window.innerWidth < breakpoint) return;
+
   if ((cell.lastTriggered == target) && !double_click) return;
   let maxc = getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px");
   if (beforeopenmap.row == "") {
