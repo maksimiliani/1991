@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   bg_highlight = cell_set_instance[0].querySelector('.hover-mask');
   descr1991 = cell_set_instance[0].querySelector('.new-home-p');
 
-  if (cell_tmp.row == "") {
+  if ((cell_tmp.row == "") && (window.innerWidth >= breakpoint)) {
     for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px"); i++) {
       cell_tmp.row += '33.33vh ';
     }
