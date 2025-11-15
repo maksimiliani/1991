@@ -8,6 +8,7 @@ let cell_container_instance;
 let cell_set_instance;
 let cell_size = "70";
 let breakpoint = 992;
+let cell_height_tmp = '26.67vh ';
 
 let bg_highlight;
 let descr1991;
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   if ((cell_tmp.row == "") && (window.innerWidth >= breakpoint)) {
     for (let i = 1; i <= getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px"); i++) {
-      cell_tmp.row += '33.33vh ';
+      cell_tmp.row += cell_height_tmp;
     }
     oldmap = cell_tmp;
     cell_container_instance.style.gridTemplateRows = oldmap.row;
