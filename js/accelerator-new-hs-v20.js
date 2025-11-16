@@ -1,3 +1,5 @@
+const urlParams = new URLSearchParams(window.location.search);
+
 let cell_tmp = {row: ""};
 let oldmap = {row: ""};
 let beforeopenmap = {row: ""};
@@ -6,8 +8,8 @@ let cell = {lastTriggered: null};
 let cell_container = 'home-new';
 let cell_container_instance;
 let cell_set_instance;
-let cell_size = "70";
-let breakpoint = 992;
+let cell_size = "70"; if (urlParams.get('cellSize') != '') cell_size = urlParams.get('cellSize');
+let breakpoint = 992; if (urlParams.get('breakPoint') != '') breakpoint = parseInt(urlParams.get('breakPoint'));
 let cell_height_tmp = '26.67vh ';
 let hero_cell_height = 80;
 
