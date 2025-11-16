@@ -25,8 +25,8 @@ function getOrderIndex(node) {
 document.addEventListener("DOMContentLoaded", (event) => {
 
   let hero_cell_height_num = Math.round(parseFloat(window.getComputedStyle(document.querySelector(`.home-new.v20`)).height)/window.innerHeight * 100);
-  hero_cell_height = toString(hero_cell_height_num)+"vh ";
-  cell_height_tmp = toString(Math.round(hero_cell_height_num*100/3)*100)+"vh ";
+  hero_cell_height = hero_cell_height_num.toString()+"vh ";
+  cell_height_tmp = (Math.round(hero_cell_height_num*100/3)*100).toString()+"vh ";
 
   cell_container_instance = document.querySelector(`.${cell_container}`);
   cell_set_instance = document.querySelectorAll(`.${cell_container} > *`);
