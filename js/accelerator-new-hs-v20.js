@@ -9,7 +9,7 @@ let cell_set_instance;
 let cell_size = "70";
 let breakpoint = 992;
 let cell_height_tmp = '26.67vh ';
-let hero_cell_height;
+let hero_cell_height = 80;
 
 let bg_highlight;
 let descr1991;
@@ -24,9 +24,9 @@ function getOrderIndex(node) {
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
-  let hero_cell_height_num = Math.round(parseFloat(window.getComputedStyle(document.querySelector(`.home-new.v20`)).height)/window.innerHeight * 100);
+  /*let hero_cell_height_num = Math.round(parseFloat(window.getComputedStyle(document.querySelector(`.home-new.v20`)).height)/window.innerHeight * 100);
   hero_cell_height = hero_cell_height_num.toString()+"vh ";
-  cell_height_tmp = (Math.round(hero_cell_height_num*100/3)*100).toString()+"vh ";
+  cell_height_tmp = (Math.round(hero_cell_height_num*100/3)*100).toString()+"vh ";*/
 
   cell_container_instance = document.querySelector(`.${cell_container}`);
   cell_set_instance = document.querySelectorAll(`.${cell_container} > *`);
@@ -76,7 +76,7 @@ function expandCell(target, double_click = true, scale = "15") {
   let maxc = getStringCount(window.getComputedStyle(cell_container_instance, null)["grid-template-rows"], "px");
   if (beforeopenmap.row == "") {
     for (let i = 1; i <= maxc; i++) {
-      beforeopenmap.row += parseInt(hero_cell_height, 10)/maxc + 'vh ';
+      beforeopenmap.row += hero_cell_height/maxc + 'vh ';
     }
     oldmap = beforeopenmap;
   }
@@ -92,7 +92,7 @@ function expandCell(target, double_click = true, scale = "15") {
   }
     
   for (let i = 1; i <= maxcount.row; i++) {
-    newmap.row += ((i == inx.h) ? (scale + 'vh ') : ((parseInt(hero_cell_height, 10) - scale)/(maxcount.row - 1) + 'vh '));
+    newmap.row += ((i == inx.h) ? (scale + 'vh ') : ((hero_cell_height - scale)/(maxcount.row - 1) + 'vh '));
   }
   
     if ((newmap.row == oldmap.row) && double_click) {
